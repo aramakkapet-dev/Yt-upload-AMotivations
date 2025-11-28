@@ -1,3 +1,4 @@
+/*
 package com.main.yt;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -20,3 +21,4 @@ public class ScheduledUploader {
         }
     }
 }
+*/
