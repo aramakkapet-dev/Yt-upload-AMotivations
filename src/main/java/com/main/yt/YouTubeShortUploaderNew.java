@@ -28,15 +28,7 @@ public class YouTubeShortUploaderNew {
 
     public static void main(String[] args) throws Exception {
         // Load from env (GitHub Secrets mapped to env vars in GH Actions)
-        String clientId = "487847793152-nodvl3scbq9phfdjjeqfse34efhopo1q.apps.googleusercontent.com";
-        String clientSecret = "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";
-        String refreshToken = "1//0g12NGrYv_8xzCgYIARAAGBASNwF-L9IrBcFhz9-6PaiNIoL3PsaPhNEE1Uv1FY2Yw2X8d5ikqKff7ztKCvx7oPWwa7TLP29qQhE";
-        String driveFileId = "1aWBiH0-PLF1d0hjUHPWj1km5iUg64-qj"; // single file id; you can loop or rotate
-        String title = "Testing title";
-        String description = "Testing description";
-        String tagsCsv = "tag1,tag2,tag3";
-        String contentFolderId = "1-swsMBKPmodoA6Ed_DiQRm2ninWIA3-A"; // Drive "content" folder
-        String postedFolderId = "1kg9jqa6QHLIHIrU4yfmmEp1qAHRWPP5V";   // Drive "posted" folder
+          // Drive "posted" folder
 
         if (clientId == null || clientSecret == null || refreshToken == null || contentFolderId == null || postedFolderId == null) {
             System.err.println("Missing required env vars.");
