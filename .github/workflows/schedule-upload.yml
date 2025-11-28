@@ -1,0 +1,53 @@
+name: Scheduled Drive->YouTube Upload
+
+on:
+  schedule:
+    # 07:30 AM IST → 02:30 AM UTC
+    - cron: '0 2 * * *'
+    # 12:00 PM IST → 07:00 AM UTC
+    - cron: '30 6 * * *'
+    # 04:30 PM IST → 11:00 AM UTC
+    - cron: '0 11 * * *'
+    # 08:30 PM IST → 03:00 PM UTC
+    - cron: '0 15 * * *'
+  workflow_dispatch:   # allows manual trigger
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build project
+        run: ./mvnw clean package --batch-mode
+
+      - name: Run Drive->YouTube uploader
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+          CONTENT_FOLDER_ID: ${{ secrets.CONTENT_FOLDER_ID }}
+          POSTED_FOLDER_ID: ${{ secrets.POSTED_FOLDER_ID }}
+          APPLICATION_NAME: ${{ secrets.APPLICATION_NAME }}
+          VIDEO_TITLE: ${{ secrets.VIDEO_TITLE }}
+          VIDEO_DESC: ${{ secrets.VIDEO_DESC }}
+          VIDEO_TAGS: ${{ secrets.VIDEO_TAGS }}
+        run: java -jar target/yt-upload-AMotivations-0.0.1-SNAPSHOT.jar
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uploader-logs
+          path: logs/uploader.log
