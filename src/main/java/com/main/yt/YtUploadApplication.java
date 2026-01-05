@@ -3,6 +3,7 @@ package com.main.yt;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.media.MediaHttpUploader;
 import com.google.api.client.googleapis.media.MediaHttpUploaderProgressListener;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.InputStreamContent;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -34,6 +35,7 @@ public class YtUploadApplication {
 
 	private static final JacksonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 	private static final NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+
 
 	public static void main(String[] args) throws Exception {
 
@@ -74,10 +76,20 @@ public class YtUploadApplication {
 		credential.refreshToken();
 		logger.info("Google credentials initialized.");
 
+
+		HttpRequestInitializer requestInitializer = request -> {
+			// First: let GoogleCredential do its auth work
+			credential.initialize(request);
+			request.setConnectTimeout(10 * 60 * 1000); // 10 minutes
+			request.setReadTimeout(10 * 60 * 1000);    // 10 minutes
+		};
+
+
+
 		// Build Drive client
 		Drive drive = new Drive.Builder(HTTP_TRANSPORT,
 				JSON_FACTORY,
-				credential)
+				requestInitializer)
 				.setApplicationName(applicationName)
 				.build();
 
@@ -112,7 +124,7 @@ public class YtUploadApplication {
 		// Build YouTube client
 		YouTube youtube = new YouTube.Builder(HTTP_TRANSPORT,
 				JSON_FACTORY,
-				credential)
+				requestInitializer)
 				.setApplicationName(applicationName)
 				.build();
 
