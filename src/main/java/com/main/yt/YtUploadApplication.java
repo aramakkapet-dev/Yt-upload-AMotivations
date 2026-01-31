@@ -14,7 +14,6 @@ import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoSnippet;
 import com.google.api.services.youtube.model.VideoStatus;
-import com.main.yt.video.OverlayConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +28,6 @@ import java.util.List;
 import java.util.Random;
 
 @SpringBootApplication
-@EnableConfigurationProperties(OverlayConfig.class)
 @EnableScheduling
 public class YtUploadApplication {
 
