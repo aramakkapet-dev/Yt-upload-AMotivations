@@ -1,3 +1,4 @@
+/*
 package com.main.yt.runner;
 import com.main.yt.job.DriveVideoProcessingJob;
 import org.springframework.boot.CommandLineRunner;
@@ -19,3 +20,4 @@ public class JobRunner implements CommandLineRunner {
     }
 }
 
+*/
