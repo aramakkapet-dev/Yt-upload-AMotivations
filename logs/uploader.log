@@ -1,15 +1,3 @@
-2025-11-28 15:51:41.009  INFO 5148 --- [main] com.main.yt.YtUploadApplicationTests     : Starting YtUploadApplicationTests using Java 17.0.12 on Avinash-Desktop with PID 5148 (started by Admin in D:\Avinash\Yt-upload-AMotivations)
-2025-11-28 15:51:41.030  INFO 5148 --- [main] com.main.yt.YtUploadApplicationTests     : No active profile set, falling back to 1 default profile: "default"
-2025-11-28 15:51:42.354  INFO 5148 --- [main] com.main.yt.YtUploadApplicationTests     : Started YtUploadApplicationTests in 1.837 seconds (JVM running for 2.804)
-2025-11-28 15:56:49.391  INFO 15036 --- [main] com.main.yt.YtUploadApplicationTests     : Starting YtUploadApplicationTests using Java 17.0.12 on Avinash-Desktop with PID 15036 (started by Admin in D:\Avinash\Yt-upload-AMotivations)
-2025-11-28 15:56:49.400  INFO 15036 --- [main] com.main.yt.YtUploadApplicationTests     : No active profile set, falling back to 1 default profile: "default"
-2025-11-28 15:56:50.210  INFO 15036 --- [main] com.main.yt.YtUploadApplicationTests     : Started YtUploadApplicationTests in 1.215 seconds (JVM running for 2.12)
-2025-11-28 15:58:24.397  INFO 13356 --- [main] com.main.yt.YtUploadApplicationTests     : Starting YtUploadApplicationTests using Java 17.0.12 on Avinash-Desktop with PID 13356 (started by Admin in D:\Avinash\Yt-upload-AMotivations)
-2025-11-28 15:58:24.400  INFO 13356 --- [main] com.main.yt.YtUploadApplicationTests     : No active profile set, falling back to 1 default profile: "default"
-2025-11-28 15:58:25.146  INFO 13356 --- [main] com.main.yt.YtUploadApplicationTests     : Started YtUploadApplicationTests in 1.106 seconds (JVM running for 2.022)
-2025-11-28 15:59:08.587  INFO 11960 --- [main] com.main.yt.YtUploadApplicationTests     : Starting YtUploadApplicationTests using Java 17.0.12 on Avinash-Desktop with PID 11960 (started by Admin in D:\Avinash\Yt-upload-AMotivations)
-2025-11-28 15:59:08.590  INFO 11960 --- [main] com.main.yt.YtUploadApplicationTests     : No active profile set, falling back to 1 default profile: "default"
-2025-11-28 15:59:09.382  INFO 11960 --- [main] com.main.yt.YtUploadApplicationTests     : Started YtUploadApplicationTests in 1.142 seconds (JVM running for 2.036)
-2025-11-28 16:03:39.431  INFO 6436 --- [main] com.main.yt.YtUploadApplicationTests     : Starting YtUploadApplicationTests using Java 17.0.12 on Avinash-Desktop with PID 6436 (started by Admin in D:\Avinash\Yt-upload-AMotivations)
-2025-11-28 16:03:39.431  INFO 6436 --- [main] com.main.yt.YtUploadApplicationTests     : No active profile set, falling back to 1 default profile: "default"
-2025-11-28 16:03:40.212  INFO 6436 --- [main] com.main.yt.YtUploadApplicationTests     : Started YtUploadApplicationTests in 1.329 seconds (JVM running for 2.686)
+2026-01-05 21:47:58.093  INFO 4377 --- [main] com.main.yt.YtUploadApplicationTests     : Starting YtUploadApplicationTests using Java 21.0.9 on Avinashs-MacBook-Air.local with PID 4377 (started by avinashramakkapet in /Users/avinashramakkapet/Documents/Avinash/projects/Repos/a-motivations)
+2026-01-05 21:47:58.095  INFO 4377 --- [main] com.main.yt.YtUploadApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2026-01-05 21:47:58.345  INFO 4377 --- [main] com.main.yt.YtUploadApplicationTests     : Started YtUploadApplicationTests in 0.348 seconds (JVM running for 0.642)

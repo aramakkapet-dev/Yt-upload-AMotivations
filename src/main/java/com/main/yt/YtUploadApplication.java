@@ -22,6 +22,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
@@ -33,20 +35,28 @@ public class YtUploadApplication {
 	private static final Logger logger = LoggerFactory.getLogger(YtUploadApplication.class);
 
 
-	private static final JacksonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-	private static final NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+	//private static final JacksonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+	//private static final NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
 
 	public static void main(String[] args) throws Exception {
 
+		// ✅ Force temp files into workspace
+		String tmpDir = System.getProperty("java.io.tmpdir");
+		System.out.println("✅ Using java.io.tmpdir = " + tmpDir);
+		try {
+			Files.createDirectories(Path.of(tmpDir));
+		} catch (Exception e) {
+			throw new RuntimeException("Failed to create temp dir: " + tmpDir, e);
+		}
 		SpringApplication.run(YtUploadApplication.class, args);
-		new YtUploadApplication().runUploader();
+		//new YtUploadApplication().runUploader();
 		// For local scheduled run, uncomment below:
 		//SpringApplication.run(YtUploadApplication.class, args);
 	}
 
 	// Extracted uploader logic
-	public void runUploader() throws Exception {
+	/*public void runUploader() throws Exception {
 
 		logger.info("=== Starting Drive -> YouTube Upload Task ===");
 
@@ -191,5 +201,5 @@ public class YtUploadApplication {
 		}
 
 		logger.info("=== Task Completed ===");
-	}
+	}*/
 }
